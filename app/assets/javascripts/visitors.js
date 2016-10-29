@@ -31,9 +31,6 @@ visitorCenter.controller('visitorsController', function($scope, Visitor){
 	$scope.updateVisitor = function(index) {
 		visitor = $scope.visitors[index]
 		Visitor.update(visitor)
-		// console.log(visitor);
-		// visitor = $scope.visitors[index]
-		// console.log(visitor);
 	}
 
 });

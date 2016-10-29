@@ -16,4 +16,5 @@
 //= require angular
 //= require angular-resource
 //= require bootstrap-sprockets
+//= require xeditable.min
 //= require_tree .

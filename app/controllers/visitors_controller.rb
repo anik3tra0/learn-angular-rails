@@ -18,7 +18,7 @@ class VisitorsController < ApplicationController
   end
 
   def destroy
-    respond_with @visitor.destroy(params[:id])
+    respond_with @visitor.destroy
   end
 
 private
