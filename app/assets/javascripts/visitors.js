@@ -1,8 +1,8 @@
-var visitorCenter = angular.module('VisitorCenter', ['ngResource']);
+var visitorCenter = angular.module('VisitorCenter', ['ngResource', 'xeditable']);
 
-// visitorCenter.run(function(editableOptions) {
-//   editableOptions.theme = 'bs3'; // bootstrap3 theme. Can be also 'bs2', 'default'
-// });
+visitorCenter.run(function(editableOptions) {
+  editableOptions.theme = 'bs3';
+});
 
 visitorCenter.factory('Visitor', function($resource){
 	return $resource('visitors/:id', { id: '@id' }, {
@@ -28,5 +28,12 @@ visitorCenter.controller('visitorsController', function($scope, Visitor){
 		$scope.visitors.splice(index, 1);
 	}
 
-});
+	$scope.updateVisitor = function(index) {
+		visitor = $scope.visitors[index]
+		Visitor.update(visitor)
+		// console.log(visitor);
+		// visitor = $scope.visitors[index]
+		// console.log(visitor);
+	}
 
+});

@@ -44,10 +44,9 @@
 					<td colspan="4">No visitors in the building.</td>
 				</tr>
 				<tr ng-repeat="visitor in visitors">
-					<!-- <a href="#" editable-text="visitor.first_name">{{ visitor.first_name || "empty" }}</a> -->
-					<td>{{ visitor.first_name }}</td>
-					<td>{{ visitor.last_name }}</td>
-					<td>{{ visitor.reason }}</td>
+					<td><a href="#" editable-text="visitor.first_name" onaftersave="updateVisitor($index)"">{{ visitor.first_name || "empty" }}</a></td>
+					<td><a href="#" editable-text="visitor.last_name" onaftersave="updateVisitor($index)"">{{ visitor.last_name || "empty" }}</a></td>
+					<td><a href="#" editable-text="visitor.reason" onaftersave="updateVisitor($index)"">{{ visitor.reason || "empty" }}</a></td>
 					<td><a class="btn btn-danger" ng-click="deleteVisitor($index)">Remove</a></td>
 				</tr>
 			</tbody>
