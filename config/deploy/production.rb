@@ -1,4 +1,4 @@
-server '139.59.21.5', user: 'deploy', roles: %w(web app db)
+server Rails.application.secrets.production_ip, user: 'deploy', roles: %w(web app db)
 
 # Don't change these unless you know what you're doing
 set :pty,             true
